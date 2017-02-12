@@ -1,0 +1,1 @@
+json.partial! @rick, partial: "rick", as: :rick

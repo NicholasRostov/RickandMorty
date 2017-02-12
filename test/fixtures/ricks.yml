@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chraracter: MyString
+  location: MyString
+  quote: MyString
+
+two:
+  chraracter: MyString
+  location: MyString
+  quote: MyString
