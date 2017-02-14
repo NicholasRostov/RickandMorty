@@ -1,12 +1,10 @@
-class RicksController < ApplicationController
+class Api::V1::RicksController < ApplicationController
   def index
     @ricks = Rick.all
-    render "index.json.jbuilder"
   end
 
   def show
     @rick = Rick.find_by(id: params[:id])
-    render "show.json.jbuilder"
   end
 
   def create

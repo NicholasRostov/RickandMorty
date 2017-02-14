@@ -1,16 +1,14 @@
-class RicksController < ApplicationController
+class Api::V2::RicksController < ApplicationController
   def index
     @ricks = Rick.all
-    render "index.json.jbuilder"
   end
 
   def show
     @rick = Rick.find_by(id: params[:id])
-    render "show.json.jbuilder"
   end
 
   def create
-    @rick = Rick.create(character: params[:character], location: params[:location], quote: params[:quote])
+    @rick = Rick.create(character: params[:character], dimension: params[:dimension], quote: params[:quote])
     render "show.json.jbuilder"
   end
 
@@ -23,7 +21,7 @@ class RicksController < ApplicationController
     @rick = Rick.find_by(id: params[:id])
     @rick.character = params[:character] || @rick.character
     @rick.quote = params[:quote] || @rick.quote
-    @rick.location = params[:location] || @rick.location
+    @rick.dimension = params[:dimension] || @rick.dimension
     @rick.save
     render "show.json.jbuilder"
   end
