@@ -10,7 +10,7 @@ class RicksController < ApplicationController
   end
 
   def create
-    @rick = Rick.create(character: params[:character], location: params[:location], quote: params[:quote])
+    @rick = Rick.create(character: params[:character], quote: params[:quote])
     render "show.json.jbuilder"
   end
 
@@ -23,7 +23,6 @@ class RicksController < ApplicationController
     @rick = Rick.find_by(id: params[:id])
     @rick.character = params[:character] || @rick.character
     @rick.quote = params[:quote] || @rick.quote
-    @rick.location = params[:location] || @rick.location
     @rick.save
     render "show.json.jbuilder"
   end
